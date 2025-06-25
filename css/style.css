@@ -1,1 +1,610 @@
+/* Variables de Color */
+:root {
+    --primary-color: #00bcd4; /* Cyan */
+    --secondary-color: #1a1a1a; /* Dark Gray */
+    --text-color: #e0e0e0;
+    --background-color: #121212; /* Very Dark Gray */
+    --accent-color: #00ffcc; /* Neon Green/Cyan */
+    --card-background: #1e1e1e;
+    --footer-background: #1a1a1a;
+}
 
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.icono-audiovisuales {
+    width: 52px; /* Tamaño del icono */
+    height: 52px; /* Tamaño del icono */
+    object-fit: cover; /* Asegura que la imagen se recorte proporcionalmente si es necesario */
+}
+.icono-digitador {
+    width: 52px;  /* Tamaño del icono */
+    height: 52px;  /* Tamaño del icono */
+    object-fit: cover;  /* Asegura que la imagen se recorte proporcionalmente si es necesario */
+    border-radius: 50%;  /* Hace que la imagen sea redonda (opcional) */
+    border: 2px solid #000;  /* Borde negro (opcional) */
+}
+.icono-servicio {
+    width: 52px;  /* Tamaño del icono */
+    height: 52px;  /* Tamaño del icono */
+    object-fit: cover;  /* Recorta la imagen si es necesario */
+    border-radius: 50%;  /* Hace que la imagen sea redonda (opcional) */
+    border: 2px solid #000;  /* Borde negro (opcional) */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hero-content h1 .highlight {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p .animated-text {
+    color: var(--accent-color);
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block; /* Para que el borde funcione bien */
+}
+
+.social-icons {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(78%) sepia(92%) saturate(522%) hue-rotate(134deg) brightness(97%) contrast(91%); /* Color del enlace */
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.download-cv {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.download-cv:hover {
+    background-color: var(--primary-color);
+}
+
+.hero-image {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hexagon-wrapper {
+    position: relative;
+    width: 600px; /* Ajusta el tamaño según tu foto */
+    height: 600px; /* Ajusta el tamaño según tu foto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%; /* Para hacerlo circular */
+}
+
+.hexagon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Para hacerlo circular */
+    filter: drop-shadow(0 0 15px var(--accent-color)); /* Sombra con el color de acento */
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio entre imagen y texto */
+}
+
+.about-image {
+    flex-basis: 40%;
+}
+
+.about-text {
+    flex-basis: 60%;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-text h3 .highlight {
+    color: var(--primary-color);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--card-background);
+    padding: 30px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Para que los botones queden abajo */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.service-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--accent-color));
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    margin-bottom: 30px; /* Espacio antes del botón */
+}
+
+.service-item .btn-small {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+}
+
+.service-item .btn-small:hover {
+    background-color: var(--primary-color);
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px; /* Altura fija para las imágenes del portafolio */
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 188, 212, 0.8); /* Cyan semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-item .overlay h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.portfolio-item .overlay p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.portfolio-item .overlay .btn-small {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.portfolio-item .overlay .btn-small:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#contact-form .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px; /* Espacio entre campos del mismo grupo */
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--card-background);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form input[type="tel"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary-color);
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+.send-message {
+    display: block; /* Para que ocupe todo el ancho */
+    width: 100%;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 15px 0;
+}
+
+.send-message:hover {
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-background);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 80px; /* Espacio antes del footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.scroll-to-top {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Botones de Navegación Responsiva */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+        flex-basis: auto;
+        width: 80%; /* Ajustar tamaño de la imagen */
+    }
+
+    .hexagon-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+        flex-basis: auto;
+    }
+
+    .about-text {
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Oculta la navegación principal */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajusta la posición según el tamaño del header */
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Muestra el botón del menú */
+    }
+
+    /* Estilos para el menú móvil abierto */
+    nav ul.active {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr; /* Columnas apiladas en móviles */
+    }
+
+    #contact-form .form-group {
+        flex-direction: column;
+        gap: 0; /* Elimina el gap para apilar */
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        margin-bottom: 15px; /* Espacio entre campos apilados */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
